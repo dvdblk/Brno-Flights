@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */; };
+		89D1A3CA1C81B15700A6F5A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C91C81B15700A6F5A2 /* ViewController.swift */; };
+		89D1A3CD1C81B15700A6F5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */; };
+		89D1A3CF1C81B15700A6F5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */; };
+		89D1A3D21C81B15700A6F5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */; };
+		89D1A3DA1C81B18A00A6F5A2 /* flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3D91C81B18A00A6F5A2 /* flights.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrnoFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89D1A3C91C81B15700A6F5A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89D1A3CC1C81B15700A6F5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89D1A3D11C81B15700A6F5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89D1A3D31C81B15700A6F5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89D1A3D91C81B18A00A6F5A2 /* flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flights.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89D1A3C11C81B15600A6F5A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89D1A3BB1C81B15600A6F5A2 = {
+			isa = PBXGroup;
+			children = (
+				89D1A3C61C81B15700A6F5A2 /* BrnoFlights */,
+				89D1A3C51C81B15600A6F5A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89D1A3C51C81B15600A6F5A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89D1A3C61C81B15700A6F5A2 /* BrnoFlights */ = {
+			isa = PBXGroup;
+			children = (
+				89D1A3D91C81B18A00A6F5A2 /* flights.json */,
+				89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */,
+				89D1A3C91C81B15700A6F5A2 /* ViewController.swift */,
+				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
+				89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */,
+				89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */,
+				89D1A3D31C81B15700A6F5A2 /* Info.plist */,
+			);
+			path = BrnoFlights;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89D1A3C31C81B15600A6F5A2 /* BrnoFlights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89D1A3D61C81B15700A6F5A2 /* Build configuration list for PBXNativeTarget "BrnoFlights" */;
+			buildPhases = (
+				89D1A3C01C81B15600A6F5A2 /* Sources */,
+				89D1A3C11C81B15600A6F5A2 /* Frameworks */,
+				89D1A3C21C81B15600A6F5A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrnoFlights;
+			productName = BrnoFlights;
+			productReference = 89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89D1A3BC1C81B15600A6F5A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Revion;
+				TargetAttributes = {
+					89D1A3C31C81B15600A6F5A2 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 89D1A3BF1C81B15600A6F5A2 /* Build configuration list for PBXProject "BrnoFlights" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89D1A3BB1C81B15600A6F5A2;
+			productRefGroup = 89D1A3C51C81B15600A6F5A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89D1A3C31C81B15600A6F5A2 /* BrnoFlights */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89D1A3C21C81B15600A6F5A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D1A3D21C81B15700A6F5A2 /* LaunchScreen.storyboard in Resources */,
+				89D1A3DA1C81B18A00A6F5A2 /* flights.json in Resources */,
+				89D1A3CF1C81B15700A6F5A2 /* Assets.xcassets in Resources */,
+				89D1A3CD1C81B15700A6F5A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89D1A3C01C81B15600A6F5A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89D1A3CA1C81B15700A6F5A2 /* ViewController.swift in Sources */,
+				89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D1A3CC1C81B15700A6F5A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89D1A3D11C81B15700A6F5A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89D1A3D41C81B15700A6F5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89D1A3D51C81B15700A6F5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89D1A3D71C81B15700A6F5A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BrnoFlights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Revion.BrnoFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		89D1A3D81C81B15700A6F5A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BrnoFlights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Revion.BrnoFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89D1A3BF1C81B15600A6F5A2 /* Build configuration list for PBXProject "BrnoFlights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D1A3D41C81B15700A6F5A2 /* Debug */,
+				89D1A3D51C81B15700A6F5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89D1A3D61C81B15700A6F5A2 /* Build configuration list for PBXNativeTarget "BrnoFlights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89D1A3D71C81B15700A6F5A2 /* Debug */,
+				89D1A3D81C81B15700A6F5A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89D1A3BC1C81B15600A6F5A2 /* Project object */;
+}
