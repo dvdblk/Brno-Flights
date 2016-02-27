@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		896938691C82159A00E7CA12 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896938681C82159A00E7CA12 /* InfoViewController.swift */; };
+		89AA45FC1C81DF2F0056FB8A /* FlightsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA45FB1C81DF2F0056FB8A /* FlightsTableViewCell.swift */; };
 		89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */; };
-		89D1A3CA1C81B15700A6F5A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C91C81B15700A6F5A2 /* ViewController.swift */; };
+		89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */; };
 		89D1A3CD1C81B15700A6F5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */; };
 		89D1A3CF1C81B15700A6F5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */; };
 		89D1A3D21C81B15700A6F5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */; };
@@ -16,9 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		896938681C82159A00E7CA12 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		89AA45FB1C81DF2F0056FB8A /* FlightsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsTableViewCell.swift; sourceTree = "<group>"; };
 		89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrnoFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89D1A3C91C81B15700A6F5A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
 		89D1A3CC1C81B15700A6F5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D1A3D11C81B15700A6F5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 			children = (
 				89D1A3D91C81B18A00A6F5A2 /* flights.json */,
 				89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */,
-				89D1A3C91C81B15700A6F5A2 /* ViewController.swift */,
+				89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */,
+				89AA45FB1C81DF2F0056FB8A /* FlightsTableViewCell.swift */,
+				896938681C82159A00E7CA12 /* InfoViewController.swift */,
 				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
 				89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */,
 				89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D1A3CA1C81B15700A6F5A2 /* ViewController.swift in Sources */,
+				89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */,
 				89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */,
+				896938691C82159A00E7CA12 /* InfoViewController.swift in Sources */,
+				89AA45FC1C81DF2F0056FB8A /* FlightsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +296,7 @@
 				89D1A3D81C81B15700A6F5A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
