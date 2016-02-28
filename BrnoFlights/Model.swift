@@ -53,6 +53,11 @@ struct DataCell {
 
 class FlightData {
     var flights: [DataCell] = []
+    var parser = Parser()
+    
+    init() {
+        self.flights = parser.parseJson()
+    }
 }
 
 class Parser {

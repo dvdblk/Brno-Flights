@@ -42,8 +42,5 @@ class FlightsTableViewCell: UITableViewCell {
             super.frame = frame
         }
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+
 }

@@ -13,6 +13,7 @@ let flightCellIdentifier = "flight"
 class FlightsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var flightData = FlightData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,12 @@ class FlightsViewController: UIViewController {
         if segue.identifier == "showInfoSegue" {
             if let destVC = segue.destinationViewController as? InfoViewController {
                 destVC.parentVC = self
-                if let myIndex = tableView.indexPathForSelectedRow?.section {
-                    destVC.title = String(myIndex)
+                if let myIndex = self.tableView.indexPathForSelectedRow?.section {
+                    let data = flightData.flights[myIndex]
+                    destVC.singleFlightData = data.route
+                    destVC.price = data.price
+                    destVC.duration = data.flyDuration
+                    destVC.date = data.date
                 }
             }
         }
@@ -45,13 +50,23 @@ class FlightsViewController: UIViewController {
 extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
-        //cell.flightFromLabel?.text = String(indexPath.section)
-        cell.layer.masksToBounds = false
+        // Data
+        let dataCell = flightData.flights[indexPath.section]
+        cell.durationLabel.text = dataCell.flyDuration
+        cell.priceLabel.text = dataCell.price.toEur
+        cell.flightToLabel.text = dataCell.cityTo
+        cell.flightFromLabel.text = dataCell.cityFrom
+        cell.flightFromTimeLabel.text = dataCell.dTime.toHour
+        cell.flightToTimeLabel.text = dataCell.aTime.toHour
+        cell.dateLabel.text = dataCell.date
+        cell.arrowView.transfers = dataCell.transfers
+        // UI
+        //cell.layer.masksToBounds = false
+        cell.clipsToBounds = false
         cell.layer.shadowOffset = CGSizeMake(0, 1)
         cell.layer.shadowOpacity = 0.9
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowRadius = 2
-        cell.layoutIfNeeded()
         let shFrame: CGRect = cell.layer.bounds
         let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
         cell.layer.shadowPath = shPath
@@ -63,7 +78,7 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 25
+        return flightData.flights.count
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

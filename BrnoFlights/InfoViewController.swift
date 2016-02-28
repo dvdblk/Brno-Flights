@@ -10,10 +10,15 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
-    @IBOutlet weak var companyLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
+    var singleFlightData: [DataCell] = []
+    var duration: String!
+    var date: String!
+    var price: Price!
     
     var parentVC: FlightsViewController!
     
@@ -22,6 +27,9 @@ class InfoViewController: UIViewController {
         self.tableView.registerNib(UINib(nibName: "myCell", bundle: nil), forCellReuseIdentifier: flightCellIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.durationLabel.text = self.duration
+        self.dateLabel.text = self.date
+        self.priceLabel.text = self.price.toEur
     }
 
 }
@@ -30,14 +38,19 @@ extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
         cell.hide()
+        let data = singleFlightData[indexPath.row]
+        cell.flightFromLabel.text = "\(data.cityFrom)(\(data.flyFrom))"
+        cell.flightFromTimeLabel.text = data.dTime.toHour
+        cell.flightToLabel.text = "\(data.cityTo)(\(data.flyTo))"
+        cell.flightToTimeLabel.text = data.aTime.toHour
         return cell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return singleFlightData.count
     }
 }

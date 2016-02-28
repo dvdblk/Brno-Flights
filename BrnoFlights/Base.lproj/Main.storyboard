@@ -98,15 +98,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-pZ-Fqe">
-                                <rect key="frame" x="45" y="118" width="510" height="482"/>
+                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2lJ-Le-oam" id="Sc9-cd-qwh"/>
                                     <outlet property="delegate" destination="2lJ-Le-oam" id="sFU-Cp-IEQ"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ryanair" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-fJ-N3e">
-                                <rect key="frame" x="60" y="84" width="51" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-fJ-N3e">
+                                <rect key="frame" x="60" y="84" width="18" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iZX-pZ-Fqe" firstAttribute="width" secondItem="ked-xe-d15" secondAttribute="width" multiplier="0.85" id="1Dj-SO-Ubz"/>
+                            <constraint firstItem="iZX-pZ-Fqe" firstAttribute="width" secondItem="ked-xe-d15" secondAttribute="width" id="1Dj-SO-Ubz"/>
                             <constraint firstItem="Hlb-F3-RDI" firstAttribute="top" secondItem="iZX-pZ-Fqe" secondAttribute="bottom" id="67d-N0-syY"/>
                             <constraint firstItem="iZX-pZ-Fqe" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="Gf1-U5-v5E"/>
                             <constraint firstItem="iZX-pZ-Fqe" firstAttribute="top" secondItem="eVa-46-7gb" secondAttribute="bottom" constant="15" id="UaK-mm-d4F"/>
@@ -139,8 +139,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="companyLabel" destination="1h3-fJ-N3e" id="EvI-0L-gYG"/>
                         <outlet property="dateLabel" destination="eVa-46-7gb" id="pOg-fl-Aov"/>
+                        <outlet property="durationLabel" destination="1h3-fJ-N3e" id="siT-v7-58C"/>
                         <outlet property="priceLabel" destination="fLm-S7-r9g" id="yLd-Et-ebl"/>
                         <outlet property="tableView" destination="iZX-pZ-Fqe" id="Lgc-HD-cLd"/>
                     </connections>
