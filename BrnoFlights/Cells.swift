@@ -12,21 +12,26 @@ class FlightsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var flightFromLabel: UILabel!
+    @IBOutlet weak var flightFromTimeLabel: UILabel!
     @IBOutlet weak var flightToLabel: UILabel!
+    @IBOutlet weak var flightToTimeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    @IBOutlet weak var arrowView: UIView!
+    @IBOutlet weak var arrowView: ArrowView!
+    
+    func hide() {
+        self.dateLabel.hidden = true
+        self.priceLabel.hidden = true
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        layoutIfNeeded()
     }
     
+    override func layoutSubviews() {
+        self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width - 20, self.bounds.size.height)
+        super.layoutSubviews()
+    }
 }
