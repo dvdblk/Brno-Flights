@@ -21,17 +21,29 @@ class FlightsTableViewCell: UITableViewCell {
     @IBOutlet weak var arrowView: ArrowView!
     
     func hide() {
-        self.dateLabel.hidden = true
-        self.priceLabel.hidden = true
+        self.dateLabel.removeFromSuperview()
+        self.priceLabel.removeFromSuperview()
+        self.durationLabel.hidden = true
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutIfNeeded()
+    }
+    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set {
+            let inset: CGFloat = 10
+            var frame = newValue
+            frame.origin.x += inset
+            frame.size.width -= 2 * inset
+            super.frame = frame
+        }
     }
     
     override func layoutSubviews() {
-        self.bounds = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width - 20, self.bounds.size.height)
         super.layoutSubviews()
     }
 }

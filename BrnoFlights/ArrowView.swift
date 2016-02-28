@@ -60,7 +60,6 @@ class ArrowView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        print("Asd")
         let myMid = self.bounds.midY - 1
         let myWidth = self.bounds.width
         let arrow = UIBezierPath.bezierPathWithArrowFromPoint(CGPointMake(5,myMid), endPoint: CGPointMake(myWidth-5,myMid), tailWidth: 2, headWidth: 6, headLength: 6)

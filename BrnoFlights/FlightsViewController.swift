@@ -51,6 +51,7 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.layer.shadowOpacity = 0.9
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowRadius = 2
+        cell.layoutIfNeeded()
         let shFrame: CGRect = cell.layer.bounds
         let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
         cell.layer.shadowPath = shPath
@@ -77,5 +78,6 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("showInfoSegue", sender: self)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
