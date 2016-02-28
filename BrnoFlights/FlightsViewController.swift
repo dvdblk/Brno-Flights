@@ -60,6 +60,7 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.flightToTimeLabel.text = dataCell.aTime.toHour
         cell.dateLabel.text = dataCell.date
         cell.arrowView.transfers = dataCell.transfers
+        cell.arrowView.setNeedsDisplay()
         // UI
         //cell.layer.masksToBounds = false
         cell.clipsToBounds = false

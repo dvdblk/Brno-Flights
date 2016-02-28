@@ -66,12 +66,16 @@ class ArrowView: UIView {
         let arrow = UIBezierPath.bezierPathWithArrowFromPoint(CGPointMake(5,myMid), endPoint: CGPointMake(myWidth-5,myMid), tailWidth: 2, headWidth: 6, headLength: 6)
         UIColor.blackColor().setFill()
         
-        func drawCircle(startpoint: CGPoint) {
-            let point = CGPoint(x: startpoint.x, y: myMid - radius/2)
+        func drawCircle(startpoint: CGFloat) {
+            let point = CGPoint(x: startpoint, y: myMid - radius/2)
             let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: radius, height: radius)))
             circle.fill()
         }
         
+        let myW = (myWidth-16) / CGFloat(transfers+1)
+        for i in 0..<transfers {
+            drawCircle(radius/2+myW*CGFloat(i+1))
+        }
         
         
         arrow.fill()

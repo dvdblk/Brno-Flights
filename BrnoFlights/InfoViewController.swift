@@ -43,6 +43,7 @@ extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
         cell.flightFromTimeLabel.text = data.dTime.toHour
         cell.flightToLabel.text = "\(data.cityTo)(\(data.flyTo))"
         cell.flightToTimeLabel.text = data.aTime.toHour
+        cell.selectionStyle = .None
         return cell
     }
     
