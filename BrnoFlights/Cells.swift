@@ -36,16 +36,11 @@ class FlightsTableViewCell: UITableViewCell {
             return super.frame
         }
         set {
-            let inset: CGFloat = 10
+            let inset: CGFloat = cellOffset
             var frame = newValue
             frame.origin.x += inset
             frame.size.width -= 2 * inset
             super.frame = frame
         }
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
 }

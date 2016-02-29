@@ -9,6 +9,7 @@
 import UIKit
 
 let flightCellIdentifier = "flight"
+let cellOffset = UIScreen.mainScreen().bounds.width * 0.02
 
 class FlightsViewController: UIViewController {
     
@@ -96,7 +97,7 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return UIScreen.mainScreen().bounds.width * 0.02
+        return cellOffset
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
