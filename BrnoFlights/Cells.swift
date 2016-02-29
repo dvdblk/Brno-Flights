@@ -27,6 +27,7 @@ class FlightsTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
+        setNeedsLayout()
         super.awakeFromNib()
     }
     
@@ -41,6 +42,10 @@ class FlightsTableViewCell: UITableViewCell {
             frame.size.width -= 2 * inset
             super.frame = frame
         }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 
 }

@@ -20,24 +20,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-Pz-ZCB">
-                                <rect key="frame" x="420" y="67" width="180" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="399" y="67" width="198" height="30"/>
+                                <state key="normal" title="Prestupy">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuf-h5-Hy0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvK-8P-bag">
-                                <rect key="frame" x="210" y="64" width="180" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="9az-Fq-kHQ"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYw-ho-srC"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="un2-mP-mcA">
@@ -49,25 +37,37 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W3-uk-c19">
-                                <rect key="frame" x="0.0" y="67" width="180" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="3" y="67" width="198" height="30"/>
+                                <state key="normal" title="Cena">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN0-dc-psQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvK-8P-bag">
+                                <rect key="frame" x="201" y="64" width="198" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="9az-Fq-kHQ"/>
+                                </constraints>
+                                <state key="normal" title="Dátum">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYw-ho-srC"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.71112812950000004" green="0.87130812530000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="SvK-8P-bag" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="1Bm-JA-QBD"/>
+                            <constraint firstItem="SvK-8P-bag" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.33" id="1Bm-JA-QBD"/>
                             <constraint firstItem="TSk-Pz-ZCB" firstAttribute="baseline" secondItem="SvK-8P-bag" secondAttribute="baseline" id="64R-Ca-TC5"/>
                             <constraint firstItem="SvK-8P-bag" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PYA-DY-jjN"/>
                             <constraint firstItem="TSk-Pz-ZCB" firstAttribute="width" secondItem="SvK-8P-bag" secondAttribute="width" id="TS5-Ll-ar8"/>
-                            <constraint firstItem="TSk-Pz-ZCB" firstAttribute="leading" secondItem="SvK-8P-bag" secondAttribute="trailing" constant="30" id="VGO-lq-9ST"/>
+                            <constraint firstItem="TSk-Pz-ZCB" firstAttribute="leading" secondItem="SvK-8P-bag" secondAttribute="trailing" id="VGO-lq-9ST"/>
                             <constraint firstItem="4W3-uk-c19" firstAttribute="baseline" secondItem="SvK-8P-bag" secondAttribute="baseline" id="X0r-5n-7Ej"/>
                             <constraint firstItem="un2-mP-mcA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XwU-OY-ci5"/>
-                            <constraint firstItem="SvK-8P-bag" firstAttribute="leading" secondItem="4W3-uk-c19" secondAttribute="trailing" constant="30" id="lZw-Zd-2xC"/>
+                            <constraint firstItem="SvK-8P-bag" firstAttribute="leading" secondItem="4W3-uk-c19" secondAttribute="trailing" id="lZw-Zd-2xC"/>
                             <constraint firstItem="4W3-uk-c19" firstAttribute="width" secondItem="SvK-8P-bag" secondAttribute="width" id="mJ3-NG-79R"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="un2-mP-mcA" secondAttribute="bottom" id="qg1-0C-ojD"/>
                             <constraint firstItem="un2-mP-mcA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="sp8-Vd-JMP"/>
@@ -78,6 +78,7 @@
                     <navigationItem key="navigationItem" title="Flights" id="Gih-pX-GZo"/>
                     <connections>
                         <outlet property="tableView" destination="un2-mP-mcA" id="NuN-4J-eHy"/>
+                        <outletCollection property="sortButtons" destination="TSk-Pz-ZCB" id="XXq-Hi-QCi"/>
                         <segue destination="2lJ-Le-oam" kind="show" identifier="showInfoSegue" id="Qfg-cC-HA7"/>
                     </connections>
                 </viewController>
@@ -97,9 +98,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-pZ-Fqe">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-pZ-Fqe">
                                 <rect key="frame" x="0.0" y="118" width="600" height="482"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2lJ-Le-oam" id="Sc9-cd-qwh"/>
                                     <outlet property="delegate" destination="2lJ-Le-oam" id="sFU-Cp-IEQ"/>
@@ -124,7 +126,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.71112812950000004" green="0.87130812530000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iZX-pZ-Fqe" firstAttribute="width" secondItem="ked-xe-d15" secondAttribute="width" id="1Dj-SO-Ubz"/>
                             <constraint firstItem="Hlb-F3-RDI" firstAttribute="top" secondItem="iZX-pZ-Fqe" secondAttribute="bottom" id="67d-N0-syY"/>

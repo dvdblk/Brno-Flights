@@ -13,7 +13,9 @@ let flightCellIdentifier = "flight"
 class FlightsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var sortButtons: [UIButton]!
     var flightData = FlightData()
+    var previousTag = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,22 @@ class FlightsViewController: UIViewController {
     }
 
     @IBAction func sortBtnPressed(sender: UIButton) {
-        print(sender.tag)
+        var compareClosure: (Int, Int) -> Bool = { $0 < $1 }
+        if sender.tag == previousTag {
+            compareClosure = { $0 > $1 }
+            previousTag = -1
+        } else {
+            previousTag = sender.tag
+        }
+        
+        if sender.tag == 0 {
+            flightData.flights.sortInPlace({compareClosure($0.price, $1.price)})
+        } else if sender.tag == 1 {
+            flightData.flights.sortInPlace({compareClosure($0.dTime, $1.dTime)})
+        } else {
+            flightData.flights.sortInPlace({compareClosure($0.transfers, $1.transfers)})
+        }
+        self.tableView.reloadData()
     }
 }
 
@@ -50,7 +67,6 @@ class FlightsViewController: UIViewController {
 extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
-        // Data
         let dataCell = flightData.flights[indexPath.section]
         cell.durationLabel.text = dataCell.flyDuration
         cell.priceLabel.text = dataCell.price.toEur
@@ -61,16 +77,6 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.dateLabel.text = dataCell.date
         cell.arrowView.transfers = dataCell.transfers
         cell.arrowView.setNeedsDisplay()
-        // UI
-        //cell.layer.masksToBounds = false
-        cell.clipsToBounds = false
-        cell.layer.shadowOffset = CGSizeMake(0, 1)
-        cell.layer.shadowOpacity = 0.9
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.layer.shadowRadius = 2
-        let shFrame: CGRect = cell.layer.bounds
-        let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
-        cell.layer.shadowPath = shPath
         return cell
     }
     
@@ -95,5 +101,16 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("showInfoSegue", sender: self)
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.clipsToBounds = false
+        cell.layer.shadowOffset = CGSizeMake(1, 1)
+        cell.layer.shadowOpacity = 0.9
+        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowRadius = 2
+        let shFrame: CGRect = cell.bounds
+        let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
+        cell.layer.shadowPath = shPath
     }
 }
