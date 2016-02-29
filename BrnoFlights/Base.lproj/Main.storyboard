@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -22,7 +21,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-Pz-ZCB">
                                 <rect key="frame" x="399" y="67" width="198" height="30"/>
                                 <state key="normal" title="Prestupy">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iuf-h5-Hy0"/>
@@ -39,7 +38,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W3-uk-c19">
                                 <rect key="frame" x="3" y="67" width="198" height="30"/>
                                 <state key="normal" title="Cena">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NN0-dc-psQ"/>
@@ -51,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="36" id="9az-Fq-kHQ"/>
                                 </constraints>
                                 <state key="normal" title="Dátum">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="sortBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYw-ho-srC"/>
@@ -78,7 +77,7 @@
                     <navigationItem key="navigationItem" title="Flights" id="Gih-pX-GZo"/>
                     <connections>
                         <outlet property="tableView" destination="un2-mP-mcA" id="NuN-4J-eHy"/>
-                        <outletCollection property="sortButtons" destination="TSk-Pz-ZCB" id="XXq-Hi-QCi"/>
+                        <outletCollection property="sortButtons" destination="TSk-Pz-ZCB" collectionClass="NSMutableArray" id="XXq-Hi-QCi"/>
                         <segue destination="2lJ-Le-oam" kind="show" identifier="showInfoSegue" id="Qfg-cC-HA7"/>
                     </connections>
                 </viewController>
@@ -99,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iZX-pZ-Fqe">
-                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                                <rect key="frame" x="0.0" y="125" width="600" height="358"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -108,41 +107,44 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h3-fJ-N3e">
-                                <rect key="frame" x="60" y="84" width="18" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25/03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-46-7gb">
-                                <rect key="frame" x="273" y="79" width="55" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="290" y="84" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 €" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLm-S7-r9g">
-                                <rect key="frame" x="487" y="79" width="52" height="24"/>
+                                <rect key="frame" x="274" y="503" width="52" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.1084974177" green="0.56768856749999996" blue="0.0029776191630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rq-wI-0TJ">
+                                <rect key="frame" x="274" y="547" width="52" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Order">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71112812950000004" green="0.87130812530000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iZX-pZ-Fqe" firstAttribute="width" secondItem="ked-xe-d15" secondAttribute="width" id="1Dj-SO-Ubz"/>
-                            <constraint firstItem="Hlb-F3-RDI" firstAttribute="top" secondItem="iZX-pZ-Fqe" secondAttribute="bottom" id="67d-N0-syY"/>
                             <constraint firstItem="iZX-pZ-Fqe" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="Gf1-U5-v5E"/>
-                            <constraint firstItem="iZX-pZ-Fqe" firstAttribute="top" secondItem="eVa-46-7gb" secondAttribute="bottom" constant="15" id="UaK-mm-d4F"/>
-                            <constraint firstItem="1h3-fJ-N3e" firstAttribute="baseline" secondItem="eVa-46-7gb" secondAttribute="baseline" id="ZAP-bw-dMf"/>
-                            <constraint firstItem="eVa-46-7gb" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="d3l-1j-OyN"/>
-                            <constraint firstItem="fLm-S7-r9g" firstAttribute="trailing" secondItem="ked-xe-d15" secondAttribute="trailingMargin" multiplier="0.93" id="gW8-Qd-8hf"/>
-                            <constraint firstItem="1h3-fJ-N3e" firstAttribute="leading" secondItem="ked-xe-d15" secondAttribute="leadingMargin" multiplier="3" id="iXG-8c-maq"/>
-                            <constraint firstItem="eVa-46-7gb" firstAttribute="top" secondItem="XZO-Gm-UoO" secondAttribute="bottom" constant="15" id="t7b-xh-n3z"/>
-                            <constraint firstItem="fLm-S7-r9g" firstAttribute="baseline" secondItem="eVa-46-7gb" secondAttribute="baseline" id="zsI-h6-h0K"/>
+                            <constraint firstItem="Hlb-F3-RDI" firstAttribute="top" secondItem="9Rq-wI-0TJ" secondAttribute="bottom" constant="20" id="Ikd-wT-EgH"/>
+                            <constraint firstItem="fLm-S7-r9g" firstAttribute="top" secondItem="iZX-pZ-Fqe" secondAttribute="bottom" constant="20" id="JJ2-mV-AVT"/>
+                            <constraint firstItem="fLm-S7-r9g" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="Ljv-T8-RYj"/>
+                            <constraint firstItem="1h3-fJ-N3e" firstAttribute="top" secondItem="XZO-Gm-UoO" secondAttribute="bottom" constant="20" id="TmA-e2-hMs"/>
+                            <constraint firstItem="1h3-fJ-N3e" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="XVH-jj-8Ta"/>
+                            <constraint firstItem="9Rq-wI-0TJ" firstAttribute="centerX" secondItem="ked-xe-d15" secondAttribute="centerX" id="eKH-2O-Qla"/>
+                            <constraint firstItem="iZX-pZ-Fqe" firstAttribute="top" secondItem="1h3-fJ-N3e" secondAttribute="bottom" constant="20" id="hIy-0c-DLt"/>
+                            <constraint firstItem="9Rq-wI-0TJ" firstAttribute="top" secondItem="fLm-S7-r9g" secondAttribute="bottom" constant="20" id="mCl-lx-paR"/>
+                            <constraint firstItem="9Rq-wI-0TJ" firstAttribute="width" secondItem="fLm-S7-r9g" secondAttribute="width" id="pX2-JQ-VeX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="eVa-46-7gb" id="pOg-fl-Aov"/>
                         <outlet property="durationLabel" destination="1h3-fJ-N3e" id="siT-v7-58C"/>
+                        <outlet property="orderBtn" destination="9Rq-wI-0TJ" id="i4D-aT-eLM"/>
                         <outlet property="priceLabel" destination="fLm-S7-r9g" id="yLd-Et-ebl"/>
                         <outlet property="tableView" destination="iZX-pZ-Fqe" id="Lgc-HD-cLd"/>
                     </connections>

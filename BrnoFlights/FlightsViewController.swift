@@ -37,7 +37,7 @@ class FlightsViewController: UIViewController {
                     destVC.singleFlightData = data.route
                     destVC.price = data.price
                     destVC.duration = data.flyDuration
-                    destVC.date = data.date
+                    destVC.title = data.date
                 }
             }
         }
@@ -60,6 +60,7 @@ class FlightsViewController: UIViewController {
             flightData.flights.sortInPlace({compareClosure($0.transfers, $1.transfers)})
         }
         self.tableView.reloadData()
+        self.tableView.setContentOffset(CGPoint.zero, animated: true)
     }
 }
 

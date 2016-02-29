@@ -10,8 +10,8 @@ import UIKit
 
 class InfoViewController: UIViewController {
     
+    @IBOutlet weak var orderBtn: UIButton!
     @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,8 +28,8 @@ class InfoViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.durationLabel.text = self.duration
-        self.dateLabel.text = self.date
         self.priceLabel.text = self.price.toEur
+        self.orderBtn.layer.cornerRadius = 10
     }
 
 }
