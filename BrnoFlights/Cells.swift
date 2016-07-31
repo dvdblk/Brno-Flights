@@ -17,17 +17,21 @@ class FlightsTableViewCell: UITableViewCell {
     @IBOutlet weak var flightToTimeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
     @IBOutlet weak var arrowView: ArrowView!
     
     func hide() {
         self.dateLabel.removeFromSuperview()
         self.priceLabel.removeFromSuperview()
         self.durationLabel.hidden = true
+        self.layer.shadowOpacity = 0
     }
     
     override func awakeFromNib() {
-        setNeedsLayout()
+        self.clipsToBounds = false
+        self.layer.shadowOffset = CGSizeMake(1, 1)
+        self.layer.shadowOpacity = 0.9
+        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowRadius = 2
         super.awakeFromNib()
     }
     
@@ -42,5 +46,12 @@ class FlightsTableViewCell: UITableViewCell {
             frame.size.width -= 2 * inset
             super.frame = frame
         }
+    }
+    
+    override func layoutSubviews() {
+        let shFrame: CGRect = self.bounds
+        let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
+        self.layer.shadowPath = shPath
+        super.layoutSubviews()
     }
 }

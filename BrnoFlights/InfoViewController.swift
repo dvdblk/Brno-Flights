@@ -54,4 +54,5 @@ extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return singleFlightData.count
     }
+    
 }

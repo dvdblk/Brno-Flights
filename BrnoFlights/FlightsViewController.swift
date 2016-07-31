@@ -105,14 +105,5 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.clipsToBounds = false
-        cell.layer.shadowOffset = CGSizeMake(1, 1)
-        cell.layer.shadowOpacity = 0.9
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.layer.shadowRadius = 2
-        let shFrame: CGRect = cell.bounds
-        let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
-        cell.layer.shadowPath = shPath
-    }
+    
 }
