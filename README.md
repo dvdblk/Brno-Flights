@@ -1,3 +1,3 @@
 # Brno-Flights
 
-Task nr. 1 for an organization in Brno.
+Parses a json file and displays flights in a simple table view.
