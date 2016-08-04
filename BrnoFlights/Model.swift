@@ -78,7 +78,7 @@ class Parser {
             tempDC.aTime = j["aTime"].intValue
             let route = j["route"]
             let transfers = route.count
-            tempDC.transfers = transfers
+            tempDC.transfers = transfers-1
             for i in 0..<transfers {
                 tempDC.route.append(parse(route[i]))
             }
