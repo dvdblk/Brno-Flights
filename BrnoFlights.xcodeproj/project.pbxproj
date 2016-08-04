@@ -10,6 +10,7 @@
 		8909E8861C83AEBD00053F08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E8851C83AEBD00053F08 /* Model.swift */; };
 		8909E8881C83B13E00053F08 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E8871C83B13E00053F08 /* SwiftyJSON.swift */; };
 		896938691C82159A00E7CA12 /* FlightsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */; };
+		897A22F31D53847900A15F19 /* PathDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A22F21D53847900A15F19 /* PathDrawings.swift */; };
 		89AA45FC1C81DF2F0056FB8A /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA45FB1C81DF2F0056FB8A /* Cells.swift */; };
 		89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */; };
 		89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */; };
@@ -25,6 +26,7 @@
 		8909E8851C83AEBD00053F08 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		8909E8871C83B13E00053F08 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsInfoViewController.swift; sourceTree = "<group>"; };
+		897A22F21D53847900A15F19 /* PathDrawings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDrawings.swift; sourceTree = "<group>"; };
 		89AA45FB1C81DF2F0056FB8A /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrnoFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,17 +51,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8909E8891C83D3ED00053F08 /* Supporting Files */ = {
+		8909E8891C83D3ED00053F08 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				897A22F11D536EE700A15F19 /* Storyboard files */,
 				89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */,
 				89D1A3D91C81B18A00A6F5A2 /* flights.json */,
 				8909E8871C83B13E00053F08 /* SwiftyJSON.swift */,
 				89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */,
 				89D1A3D31C81B15700A6F5A2 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		897A22F11D536EE700A15F19 /* Storyboard files */ = {
+			isa = PBXGroup;
+			children = (
+				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
+				89DB377F1C826663003D01F5 /* myCell.xib */,
 				89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */,
 			);
-			name = "Supporting Files";
+			name = "Storyboard files";
 			sourceTree = "<group>";
 		};
 		89D1A3BB1C81B15600A6F5A2 = {
@@ -84,11 +96,10 @@
 				89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */,
 				896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */,
 				89DB37811C826EB5003D01F5 /* ArrowView.swift */,
+				897A22F21D53847900A15F19 /* PathDrawings.swift */,
 				89AA45FB1C81DF2F0056FB8A /* Cells.swift */,
 				8909E8851C83AEBD00053F08 /* Model.swift */,
-				89DB377F1C826663003D01F5 /* myCell.xib */,
-				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
-				8909E8891C83D3ED00053F08 /* Supporting Files */,
+				8909E8891C83D3ED00053F08 /* Supporting files */,
 			);
 			path = BrnoFlights;
 			sourceTree = "<group>";
@@ -167,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */,
+				897A22F31D53847900A15F19 /* PathDrawings.swift in Sources */,
 				8909E8861C83AEBD00053F08 /* Model.swift in Sources */,
 				89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */,
 				89DB37821C826EB5003D01F5 /* ArrowView.swift in Sources */,

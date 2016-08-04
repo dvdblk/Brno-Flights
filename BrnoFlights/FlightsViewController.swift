@@ -31,7 +31,7 @@ class FlightsViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showInfoSegue" {
-            if let destVC = segue.destinationViewController as? InfoViewController {
+            if let destVC = segue.destinationViewController as? FlightsInfoViewController {
                 destVC.parentVC = self
                 if let myIndex = self.tableView.indexPathForSelectedRow?.section {
                     let data = flightData.flights[myIndex]

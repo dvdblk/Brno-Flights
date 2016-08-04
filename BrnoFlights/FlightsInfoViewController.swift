@@ -1,5 +1,5 @@
 //
-//  InfoViewController.swift
+//  FlightsInfoViewController.swift
 //  BrnoFlights
 //
 //  Created by David on 27/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class FlightsInfoViewController: UIViewController {
     
     @IBOutlet weak var orderBtn: UIButton!
     @IBOutlet weak var durationLabel: UILabel!
@@ -34,7 +34,7 @@ class InfoViewController: UIViewController {
 
 }
 
-extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
+extension FlightsInfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
         cell.hide()
