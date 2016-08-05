@@ -17,6 +17,7 @@ class FlightsViewController: UIViewController {
     @IBOutlet var sortButtons: [UIButton]!
     var flightData = FlightData()
     var previousTag = -1
+    var selectedCellIndexPath: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,9 +102,23 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showInfoSegue", sender: self)
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if let tempIndexPath = selectedCellIndexPath where tempIndexPath == indexPath {
+            selectedCellIndexPath = nil
+        } else {
+            selectedCellIndexPath = indexPath
+            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        }
+        //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+ 
+        
+        
+        
+        
+        //self.performSegueWithIdentifier("showInfoSegue", sender: self)
+        //self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    
+    /*func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 110.0
+    }*/
 }

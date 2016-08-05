@@ -72,9 +72,7 @@ class ArrowView: UIView {
         func drawCircle(startpoint: CGFloat) {
             let point = CGPoint(x: startpoint, y: myMid - radius/2)
             let myCircle = BasicCircle(withPosition: point, size: radius)
-            //myCircle.finishColor()
             myCircle.color.setFill()
-            
             UIBezierPath(ovalInRect: myCircle.rectangle).fill()
         }
         
