@@ -54,7 +54,11 @@ extension UIBezierPath {
 
 class ArrowView: UIView {
     
-    var transfers = 0
+    var transfers = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override func awakeFromNib() {
         self.contentMode = .Redraw

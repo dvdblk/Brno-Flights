@@ -79,7 +79,6 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         cell.flightToTimeLabel.text = dataCell.aTime.toHour
         cell.dateLabel.text = dataCell.date
         cell.arrowView.transfers = dataCell.transfers
-        cell.arrowView.setNeedsDisplay()
         return cell
     }
     
@@ -102,15 +101,15 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print("clicked")
         if let tempIndexPath = selectedCellIndexPath where tempIndexPath == indexPath {
             selectedCellIndexPath = nil
         } else {
             selectedCellIndexPath = indexPath
-            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
         }
-        //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
- 
-        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
         
         
         
@@ -118,7 +117,11 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         //self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    /*func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 110.0
-    }*/
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if selectedCellIndexPath == indexPath {
+            return 200
+        }
+        return 80
+    }
 }
