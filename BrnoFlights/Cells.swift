@@ -19,7 +19,7 @@ class FlightsTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var arrowView: ArrowView!
     
-    var editedSize: CGFloat = 0.0
+    var previousFrame: CGFloat = 0
     
     func hide() {
         self.dateLabel.removeFromSuperview()
@@ -35,6 +35,8 @@ class FlightsTableViewCell: UITableViewCell {
         self.layer.shadowOpacity = 0.9
         self.layer.shadowColor = UIColor.blackColor().CGColor
         self.layer.shadowRadius = 2
+        self.selectionStyle = .None
+        
     }
     
     override var frame: CGRect {
@@ -44,23 +46,18 @@ class FlightsTableViewCell: UITableViewCell {
         set {
             var tempFrame = newValue
             let inset: CGFloat = cellOffset
-            print("edited size before set: \(editedSize)")
-            if editedSize != tempFrame.size.width - 2*inset || editedSize != tempFrame.size.width {
-                editedSize = tempFrame.size.width
-                print("edited size after set: \(editedSize)")
-                tempFrame.origin.x += inset
+            tempFrame.origin.x += inset
+            if previousFrame != tempFrame.size.width {
                 tempFrame.size.width -= 2 * inset
+                previousFrame = tempFrame.size.width
             }
             super.frame = tempFrame
-            print(tempFrame.width)
-            print()
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let shFrame: CGRect = self.bounds
-        let shPath: CGPathRef = UIBezierPath(rect: shFrame).CGPath
+        let shPath: CGPathRef = UIBezierPath(rect: self.bounds).CGPath
         self.layer.shadowPath = shPath
     }
 }

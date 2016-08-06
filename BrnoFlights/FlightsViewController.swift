@@ -101,15 +101,21 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        print("clicked")
+        print("tapped")
         if let tempIndexPath = selectedCellIndexPath where tempIndexPath == indexPath {
             selectedCellIndexPath = nil
         } else {
             selectedCellIndexPath = indexPath
         }
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        UIView.transitionWithView(self.view,
+                                  duration: 1,
+                                  options: [.CurveEaseInOut, .TransitionCrossDissolve],
+                                  animations: { () -> Void in
+                                    tableView.reloadRowsAtIndexPaths(tableView.indexPathsForVisibleRows!, withRowAnimation: .None)
+                                    tableView.contentOffset = CGPointZero
+
+            }, completion: nil)
+        //tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
         
         
         
