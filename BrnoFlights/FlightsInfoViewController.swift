@@ -24,7 +24,7 @@ class FlightsInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.registerNib(UINib(nibName: "myCell", bundle: nil), forCellReuseIdentifier: flightCellIdentifier)
+        self.tableView.register(UINib(nibName: "myCell", bundle: nil), forCellReuseIdentifier: flightCellIdentifier)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.durationLabel.text = self.duration
@@ -35,23 +35,23 @@ class FlightsInfoViewController: UIViewController {
 }
 
 extension FlightsInfoViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: flightCellIdentifier) as! FlightsTableViewCell
         cell.hide()
         let data = singleFlightData[indexPath.row]
         cell.flightFromLabel.text = "\(data.cityFrom)(\(data.flyFrom))"
         cell.flightFromTimeLabel.text = data.dTime.toHour
         cell.flightToLabel.text = "\(data.cityTo)(\(data.flyTo))"
         cell.flightToTimeLabel.text = data.aTime.toHour
-        cell.selectionStyle = .None
+        cell.selectionStyle = .none
         return cell
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return singleFlightData.count
     }
     

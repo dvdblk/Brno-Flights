@@ -9,7 +9,8 @@
 import UIKit
 
 let flightCellIdentifier = "flight"
-let cellOffset = UIScreen.mainScreen().bounds.width * 0.02
+let flightInfoCellIdentifier = "flightInfo"
+let cellOffset = UIScreen.main.bounds.width * 0.02
 
 class FlightsViewController: UIViewController {
     
@@ -17,11 +18,12 @@ class FlightsViewController: UIViewController {
     @IBOutlet var sortButtons: [UIButton]!
     var flightData = FlightData()
     var previousTag = -1
-    var selectedCellIndexPath: NSIndexPath?
+    var selectedCellIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.registerNib(UINib(nibName: "myCell", bundle: nil), forCellReuseIdentifier: flightCellIdentifier)
+        self.tableView.register(UINib(nibName: "FlightsTableViewCell", bundle: nil), forCellReuseIdentifier: flightCellIdentifier)
+        self.tableView.register(UINib(nibName: "FlightsInfoTableViewCell", bundle: nil), forCellReuseIdentifier: flightInfoCellIdentifier)
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
@@ -30,9 +32,9 @@ class FlightsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showInfoSegue" {
-            if let destVC = segue.destinationViewController as? FlightsInfoViewController {
+            if let destVC = segue.destination as? FlightsInfoViewController {
                 destVC.parentVC = self
                 if let myIndex = self.tableView.indexPathForSelectedRow?.section {
                     let data = flightData.flights[myIndex]
@@ -45,7 +47,7 @@ class FlightsViewController: UIViewController {
         }
     }
 
-    @IBAction func sortBtnPressed(sender: UIButton) {
+    @IBAction func sortBtnPressed(_ sender: UIButton) {
         var compareClosure: (Int, Int) -> Bool = { $0 < $1 }
         if sender.tag == previousTag {
             compareClosure = { $0 > $1 }
@@ -55,11 +57,11 @@ class FlightsViewController: UIViewController {
         }
         
         if sender.tag == 0 {
-            flightData.flights.sortInPlace({compareClosure($0.price, $1.price)})
+            flightData.flights.sort(by: {compareClosure($0.price, $1.price)})
         } else if sender.tag == 1 {
-            flightData.flights.sortInPlace({compareClosure($0.dTime, $1.dTime)})
+            flightData.flights.sort(by: {compareClosure($0.dTime, $1.dTime)})
         } else {
-            flightData.flights.sortInPlace({compareClosure($0.transfers, $1.transfers)})
+            flightData.flights.sort(by: {compareClosure($0.transfers, $1.transfers)})
         }
         self.tableView.reloadData()
         self.tableView.setContentOffset(CGPoint.zero, animated: true)
@@ -68,8 +70,8 @@ class FlightsViewController: UIViewController {
 
 
 extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(flightCellIdentifier) as! FlightsTableViewCell
+    private func flightCell(atIndexPath indexPath: IndexPath) -> FlightsTableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: flightCellIdentifier) as! FlightsTableViewCell
         let dataCell = flightData.flights[indexPath.section]
         cell.durationLabel.text = dataCell.flyDuration
         cell.priceLabel.text = dataCell.price.toEur
@@ -82,51 +84,61 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    private func flightInfoCell(atIndexPath indexPath: IndexPath) -> FlightsInfoTableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: flightInfoCellIdentifier) as! FlightsInfoTableViewCell
+        let dataCell = flightData.flights[indexPath.section]
+        cell.routesView.routesInfo = DataCell.createFlightRoutesInfo(from: dataCell)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if selectedCellIndexPath == indexPath {
+            return flightInfoCell(atIndexPath: indexPath)
+        }
+        return flightCell(atIndexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return flightData.flights.count
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
-        footer.backgroundColor = UIColor.clearColor()
+        footer.backgroundColor = UIColor.clear
         return footer
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return cellOffset
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("tapped")
-        if let tempIndexPath = selectedCellIndexPath where tempIndexPath == indexPath {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var indexPathsToReload = [indexPath]
+        if let prevSelectedIP = selectedCellIndexPath {
+            indexPathsToReload.append(prevSelectedIP)
+        }
+        if let tempIndexPath = selectedCellIndexPath, tempIndexPath == indexPath {
             selectedCellIndexPath = nil
         } else {
             selectedCellIndexPath = indexPath
         }
-        UIView.transitionWithView(self.view,
-                                  duration: 1,
-                                  options: [.CurveEaseInOut, .TransitionCrossDissolve],
-                                  animations: { () -> Void in
-                                    tableView.reloadRowsAtIndexPaths(tableView.indexPathsForVisibleRows!, withRowAnimation: .None)
-                                    tableView.contentOffset = CGPointZero
+        tableView.reloadRows(at: indexPathsToReload, with: .fade)
 
-            }, completion: nil)
-        //tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         
-        
-        
-        //self.performSegueWithIdentifier("showInfoSegue", sender: self)
-        //self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        // segue to FlightsInfoVC...
+        /*self.performSegue(withIdentifier: "showInfoSegue", sender: self)
+        self.tableView.deselectRow(at: indexPath, animated: true)*/
     }
     
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if selectedCellIndexPath == indexPath {
-            return 200
+            return 250
         }
         return 80
     }

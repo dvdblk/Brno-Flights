@@ -8,35 +8,17 @@
 
 import UIKit
 
-class FlightsTableViewCell: UITableViewCell {
+class BaseFlightsTableViewCell: UITableViewCell {
+    private var previousFrame: CGFloat = 0
 
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var flightFromLabel: UILabel!
-    @IBOutlet weak var flightFromTimeLabel: UILabel!
-    @IBOutlet weak var flightToLabel: UILabel!
-    @IBOutlet weak var flightToTimeLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var arrowView: ArrowView!
-    
-    var previousFrame: CGFloat = 0
-    
-    func hide() {
-        self.dateLabel.removeFromSuperview()
-        self.priceLabel.removeFromSuperview()
-        self.durationLabel.hidden = true
-        self.layer.shadowOpacity = 0
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.clipsToBounds = false
-        self.layer.shadowOffset = CGSizeMake(1, 1)
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowOpacity = 0.9
-        self.layer.shadowColor = UIColor.blackColor().CGColor
+        self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowRadius = 2
-        self.selectionStyle = .None
-        
+        self.selectionStyle = .none
     }
     
     override var frame: CGRect {
@@ -57,7 +39,32 @@ class FlightsTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let shPath: CGPathRef = UIBezierPath(rect: self.bounds).CGPath
+        let shPath: CGPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.shadowPath = shPath
     }
+
+}
+
+class FlightsTableViewCell: BaseFlightsTableViewCell {
+
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var flightFromLabel: UILabel!
+    @IBOutlet weak var flightFromTimeLabel: UILabel!
+    @IBOutlet weak var flightToLabel: UILabel!
+    @IBOutlet weak var flightToTimeLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var arrowView: ArrowView!
+    
+    func hide() {
+        self.dateLabel.removeFromSuperview()
+        self.priceLabel.removeFromSuperview()
+        self.durationLabel.isHidden = true
+        self.layer.shadowOpacity = 0
+    }
+}
+
+class FlightsInfoTableViewCell: BaseFlightsTableViewCell {
+    
+    @IBOutlet weak var routesView: FlightInfoView!
 }
