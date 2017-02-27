@@ -118,17 +118,16 @@ extension FlightsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var indexPathsToReload = [indexPath]
-        if let prevSelectedIP = selectedCellIndexPath {
-            indexPathsToReload.append(prevSelectedIP)
-        }
-        if let tempIndexPath = selectedCellIndexPath, tempIndexPath == indexPath {
+        if let previouslySelectedIndexPath = selectedCellIndexPath, previouslySelectedIndexPath == indexPath {
+            indexPathsToReload.append(previouslySelectedIndexPath)
             selectedCellIndexPath = nil
+            tableView.reloadRows(at: indexPathsToReload, with: .fade)
         } else {
             selectedCellIndexPath = indexPath
+            tableView.reloadRows(at: indexPathsToReload, with: .fade)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
         }
-        tableView.reloadRows(at: indexPathsToReload, with: .fade)
-
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        
         
         // segue to FlightsInfoVC...
         /*self.performSegue(withIdentifier: "showInfoSegue", sender: self)

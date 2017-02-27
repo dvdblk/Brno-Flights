@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class FlightInfoView: UIView {
-    
+    private let lineWidth: CGFloat = 2
     private let lineHeight: CGFloat = 40
     private let circleRadius: CGFloat = 5
     private lazy var myMid: CGFloat = {
-        return self.bounds.midX - 1
+        return self.bounds.midX
     }()
     
     var routesInfo: FlightRoutesInfo? {
@@ -34,8 +34,10 @@ class FlightInfoView: UIView {
     }
     
     private func createLine(withYPos yPos: CGFloat) -> UIBezierPath {
-        let lineRect = CGRect(x: myMid, y: yPos, width: 2, height: lineHeight)
-        let linePath = UIBezierPath(rect: lineRect)
+        let linePath = UIBezierPath()
+        linePath.move(to: CGPoint(x: myMid, y: yPos))
+        linePath.addLine(to: CGPoint(x: myMid, y: yPos+lineHeight))
+        linePath.lineWidth = lineWidth
         return linePath
     }
     
@@ -48,7 +50,7 @@ class FlightInfoView: UIView {
     }
     
     private func circlePoint(fromY y: CGFloat) -> CGPoint {
-        return CGPoint(x: myMid+1-circleRadius/2, y: y)
+        return CGPoint(x: myMid-circleRadius/2, y: y)
     }
     
     private func draw(circle: BasicCircle) {
@@ -70,13 +72,11 @@ class FlightInfoView: UIView {
         }
         
         for i in 0..<cities.count-1 {
-            let linePath = createLine(withYPos: currentY())
-            UIColor.black.setFill()
-            linePath.fill()
+            UIColor.black.set()
+            createLine(withYPos: currentY()).stroke()
             if layovers[i] > 3600 {
-                let dashedLinePath = createDashedLine(withYPos: currentY())
                 UIColor.gray.set()
-                dashedLinePath.stroke()
+                createDashedLine(withYPos: currentY()).stroke()
             }
         }
         
