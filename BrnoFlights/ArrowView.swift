@@ -12,27 +12,27 @@ import UIKit
 
 extension UIBezierPath {
     
-    class func getAxisAlignedArrowPoints(inout points: Array<CGPoint>, forLength: CGFloat, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat ) {
+    class func getAxisAlignedArrowPoints(_ points: inout Array<CGPoint>, forLength: CGFloat, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat ) {
         
         let tailLength = forLength - headLength
-        points.append(CGPointMake(0, tailWidth/2))
-        points.append(CGPointMake(tailLength, tailWidth/2))
-        points.append(CGPointMake(tailLength, headWidth/2))
-        points.append(CGPointMake(forLength, 0))
-        points.append(CGPointMake(tailLength, -headWidth/2))
-        points.append(CGPointMake(tailLength, -tailWidth/2))
-        points.append(CGPointMake(0, -tailWidth/2))
+        points.append(CGPoint(x: 0, y: tailWidth/2))
+        points.append(CGPoint(x: tailLength, y: tailWidth/2))
+        points.append(CGPoint(x: tailLength, y: headWidth/2))
+        points.append(CGPoint(x: forLength, y: 0))
+        points.append(CGPoint(x: tailLength, y: -headWidth/2))
+        points.append(CGPoint(x: tailLength, y: -tailWidth/2))
+        points.append(CGPoint(x: 0, y: -tailWidth/2))
         
     }
 
-    class func transformForStartPoint(startPoint: CGPoint, endPoint: CGPoint, length: CGFloat) -> CGAffineTransform{
+    class func transformForStartPoint(_ startPoint: CGPoint, endPoint: CGPoint, length: CGFloat) -> CGAffineTransform{
         let cosine: CGFloat = (endPoint.x - startPoint.x)/length
         let sine: CGFloat = (endPoint.y - startPoint.y)/length
         
-        return CGAffineTransformMake(cosine, sine, -sine, cosine, startPoint.x, startPoint.y)
+        return CGAffineTransform(a: cosine, b: sine, c: -sine, d: cosine, tx: startPoint.x, ty: startPoint.y)
     }
     
-    class func bezierPathWithArrowFromPoint(startPoint:CGPoint, endPoint: CGPoint, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat) -> UIBezierPath {
+    class func bezierPathWithArrowFromPoint(_ startPoint:CGPoint, endPoint: CGPoint, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat) -> UIBezierPath {
         
         let xdiff: Float = Float(endPoint.x) - Float(startPoint.x)
         let ydiff: Float = Float(endPoint.y) - Float(startPoint.y)
@@ -41,46 +41,50 @@ extension UIBezierPath {
         var points = [CGPoint]()
         self.getAxisAlignedArrowPoints(&points, forLength: CGFloat(length), tailWidth: tailWidth, headWidth: headWidth, headLength: headLength)
         
-        var transform: CGAffineTransform = self.transformForStartPoint(startPoint, endPoint: endPoint, length:  CGFloat(length))
+        let transform: CGAffineTransform = self.transformForStartPoint(startPoint, endPoint: endPoint, length:  CGFloat(length))
         
-        let cgPath: CGMutablePathRef = CGPathCreateMutable()
-        CGPathAddLines(cgPath, &transform, points, 7)
-        CGPathCloseSubpath(cgPath)
+        let cgPath: CGMutablePath = CGMutablePath()
+        cgPath.addLines(between: points, transform: transform)
+        //CGPathAddLines(cgPath, &transform, points, 7)
+        cgPath.closeSubpath()
         
-        let uiPath: UIBezierPath = UIBezierPath(CGPath: cgPath)
+        let uiPath: UIBezierPath = UIBezierPath(cgPath: cgPath)
         return uiPath
     }
 }
 
 class ArrowView: UIView {
     
-    var transfers = 0
-    
-    override func awakeFromNib() {
-        self.contentMode = .Redraw
-        self.backgroundColor = UIColor.clearColor()
+    var transfers = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
     }
     
-    override func drawRect(rect: CGRect) {
+    override func awakeFromNib() {
+        self.contentMode = .redraw
+        self.backgroundColor = UIColor.clear
+    }
+    
+    override func draw(_ rect: CGRect) {
         let myMid = self.bounds.midY - 1
         let myWidth = self.bounds.width
         let radius:CGFloat = 5
-        let arrow = UIBezierPath.bezierPathWithArrowFromPoint(CGPointMake(5,myMid), endPoint: CGPointMake(myWidth-5,myMid), tailWidth: 2, headWidth: 6, headLength: 6)
-        UIColor.blackColor().setFill()
+        let arrow = UIBezierPath.bezierPathWithArrowFromPoint(CGPoint(x: 5,y: myMid), endPoint: CGPoint(x: myWidth-5,y: myMid), tailWidth: 2, headWidth: 6, headLength: 6)
+        UIColor.black.setFill()
+        arrow.fill()
         
-        func drawCircle(startpoint: CGFloat) {
+        func drawCircle(_ startpoint: CGFloat) {
             let point = CGPoint(x: startpoint, y: myMid - radius/2)
-            let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: radius, height: radius)))
-            circle.fill()
+            let myCircle = BasicCircle(withPosition: point, size: radius)
+            myCircle.color.setFill()
+            UIBezierPath(ovalIn: myCircle.rectangle).fill()
         }
         
         let myW = (myWidth-16) / CGFloat(transfers+1)
         for i in 0..<transfers {
             drawCircle(radius/2+myW*CGFloat(i+1))
         }
-        
-        
-        arrow.fill()
     }
 
 }

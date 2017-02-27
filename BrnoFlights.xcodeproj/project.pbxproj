@@ -8,24 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		8909E8861C83AEBD00053F08 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E8851C83AEBD00053F08 /* Model.swift */; };
-		8909E8881C83B13E00053F08 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8909E8871C83B13E00053F08 /* SwiftyJSON.swift */; };
-		896938691C82159A00E7CA12 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896938681C82159A00E7CA12 /* InfoViewController.swift */; };
+		896938691C82159A00E7CA12 /* FlightsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */; };
+		897A22F31D53847900A15F19 /* PathDrawings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A22F21D53847900A15F19 /* PathDrawings.swift */; };
 		89AA45FC1C81DF2F0056FB8A /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA45FB1C81DF2F0056FB8A /* Cells.swift */; };
+		89AC04F41E63A5FC00B6A88A /* FlightsInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AC04F21E63A5FC00B6A88A /* FlightsInfoTableViewCell.xib */; };
+		89AC04F61E63ADB400B6A88A /* FlightInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AC04F51E63ADB400B6A88A /* FlightInfoView.swift */; };
 		89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */; };
 		89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */; };
 		89D1A3CD1C81B15700A6F5A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */; };
 		89D1A3CF1C81B15700A6F5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */; };
 		89D1A3D21C81B15700A6F5A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */; };
 		89D1A3DA1C81B18A00A6F5A2 /* flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 89D1A3D91C81B18A00A6F5A2 /* flights.json */; };
-		89DB37801C826663003D01F5 /* myCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DB377F1C826663003D01F5 /* myCell.xib */; };
+		89DB37801C826663003D01F5 /* FlightsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89DB377F1C826663003D01F5 /* FlightsTableViewCell.xib */; };
 		89DB37821C826EB5003D01F5 /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DB37811C826EB5003D01F5 /* ArrowView.swift */; };
+		F37E67C34AC23F592B2D8D1B /* Pods_BrnoFlights.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2654CE8D0A6EACEE86AB5A /* Pods_BrnoFlights.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B12401F5E1565958A843ED /* Pods-BrnoFlights.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrnoFlights.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrnoFlights/Pods-BrnoFlights.debug.xcconfig"; sourceTree = "<group>"; };
+		6DEA9E57B042B32E26985CC5 /* Pods-BrnoFlights.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrnoFlights.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrnoFlights/Pods-BrnoFlights.release.xcconfig"; sourceTree = "<group>"; };
 		8909E8851C83AEBD00053F08 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8909E8871C83B13E00053F08 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		896938681C82159A00E7CA12 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsInfoViewController.swift; sourceTree = "<group>"; };
+		897A22F21D53847900A15F19 /* PathDrawings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathDrawings.swift; sourceTree = "<group>"; };
 		89AA45FB1C81DF2F0056FB8A /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		89AC04F21E63A5FC00B6A88A /* FlightsInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsInfoTableViewCell.xib; sourceTree = "<group>"; };
+		89AC04F51E63ADB400B6A88A /* FlightInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightInfoView.swift; sourceTree = "<group>"; };
 		89D1A3C41C81B15600A6F5A2 /* BrnoFlights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrnoFlights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +41,9 @@
 		89D1A3D11C81B15700A6F5A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89D1A3D31C81B15700A6F5A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D1A3D91C81B18A00A6F5A2 /* flights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flights.json; sourceTree = "<group>"; };
-		89DB377F1C826663003D01F5 /* myCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myCell.xib; sourceTree = "<group>"; };
+		89DB377F1C826663003D01F5 /* FlightsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightsTableViewCell.xib; sourceTree = "<group>"; };
 		89DB37811C826EB5003D01F5 /* ArrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
+		BE2654CE8D0A6EACEE86AB5A /* Pods_BrnoFlights.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrnoFlights.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,23 +51,54 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F37E67C34AC23F592B2D8D1B /* Pods_BrnoFlights.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8909E8891C83D3ED00053F08 /* Supporting Files */ = {
+		8909E8891C83D3ED00053F08 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				897A22F11D536EE700A15F19 /* Storyboard files */,
 				89D1A3C71C81B15700A6F5A2 /* AppDelegate.swift */,
 				89D1A3D91C81B18A00A6F5A2 /* flights.json */,
-				8909E8871C83B13E00053F08 /* SwiftyJSON.swift */,
 				89D1A3CE1C81B15700A6F5A2 /* Assets.xcassets */,
 				89D1A3D31C81B15700A6F5A2 /* Info.plist */,
+			);
+			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		897A22F11D536EE700A15F19 /* Storyboard files */ = {
+			isa = PBXGroup;
+			children = (
+				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
+				89AC04F21E63A5FC00B6A88A /* FlightsInfoTableViewCell.xib */,
+				89DB377F1C826663003D01F5 /* FlightsTableViewCell.xib */,
 				89D1A3D01C81B15700A6F5A2 /* LaunchScreen.storyboard */,
 			);
-			name = "Supporting Files";
+			name = "Storyboard files";
+			sourceTree = "<group>";
+		};
+		89AC04ED1E63A1CC00B6A88A /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */,
+				896938681C82159A00E7CA12 /* FlightsInfoViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		89AC04EE1E63A1D900B6A88A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				89AA45FB1C81DF2F0056FB8A /* Cells.swift */,
+				89DB37811C826EB5003D01F5 /* ArrowView.swift */,
+				89AC04F51E63ADB400B6A88A /* FlightInfoView.swift */,
+				897A22F21D53847900A15F19 /* PathDrawings.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		89D1A3BB1C81B15600A6F5A2 = {
@@ -67,6 +106,8 @@
 			children = (
 				89D1A3C61C81B15700A6F5A2 /* BrnoFlights */,
 				89D1A3C51C81B15600A6F5A2 /* Products */,
+				FD36CBD2F003CE1FB2F81F61 /* Pods */,
+				92BB42B68252F18740307B5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,16 +122,29 @@
 		89D1A3C61C81B15700A6F5A2 /* BrnoFlights */ = {
 			isa = PBXGroup;
 			children = (
-				89D1A3C91C81B15700A6F5A2 /* FlightsViewController.swift */,
-				896938681C82159A00E7CA12 /* InfoViewController.swift */,
-				89DB37811C826EB5003D01F5 /* ArrowView.swift */,
-				89AA45FB1C81DF2F0056FB8A /* Cells.swift */,
+				89AC04ED1E63A1CC00B6A88A /* VCs */,
+				89AC04EE1E63A1D900B6A88A /* Views */,
 				8909E8851C83AEBD00053F08 /* Model.swift */,
-				89DB377F1C826663003D01F5 /* myCell.xib */,
-				89D1A3CB1C81B15700A6F5A2 /* Main.storyboard */,
-				8909E8891C83D3ED00053F08 /* Supporting Files */,
+				8909E8891C83D3ED00053F08 /* Supporting files */,
 			);
 			path = BrnoFlights;
+			sourceTree = "<group>";
+		};
+		92BB42B68252F18740307B5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE2654CE8D0A6EACEE86AB5A /* Pods_BrnoFlights.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD36CBD2F003CE1FB2F81F61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22B12401F5E1565958A843ED /* Pods-BrnoFlights.debug.xcconfig */,
+				6DEA9E57B042B32E26985CC5 /* Pods-BrnoFlights.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D1A3D61C81B15700A6F5A2 /* Build configuration list for PBXNativeTarget "BrnoFlights" */;
 			buildPhases = (
+				947AC7323492871BBA3B6356 /* [CP] Check Pods Manifest.lock */,
 				89D1A3C01C81B15600A6F5A2 /* Sources */,
 				89D1A3C11C81B15600A6F5A2 /* Frameworks */,
 				89D1A3C21C81B15600A6F5A2 /* Resources */,
+				B8F654A6C63EC5F957AD1D08 /* [CP] Embed Pods Frameworks */,
+				58AC4733A1A6D307D4B68413 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +182,8 @@
 				TargetAttributes = {
 					89D1A3C31C81B15600A6F5A2 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 6QH7E4QW2D;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -152,8 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				89D1A3D21C81B15700A6F5A2 /* LaunchScreen.storyboard in Resources */,
-				89DB37801C826663003D01F5 /* myCell.xib in Resources */,
+				89DB37801C826663003D01F5 /* FlightsTableViewCell.xib in Resources */,
 				89D1A3DA1C81B18A00A6F5A2 /* flights.json in Resources */,
+				89AC04F41E63A5FC00B6A88A /* FlightsInfoTableViewCell.xib in Resources */,
 				89D1A3CF1C81B15700A6F5A2 /* Assets.xcassets in Resources */,
 				89D1A3CD1C81B15700A6F5A2 /* Main.storyboard in Resources */,
 			);
@@ -161,17 +221,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58AC4733A1A6D307D4B68413 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrnoFlights/Pods-BrnoFlights-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		947AC7323492871BBA3B6356 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8F654A6C63EC5F957AD1D08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrnoFlights/Pods-BrnoFlights-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		89D1A3C01C81B15600A6F5A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				89D1A3CA1C81B15700A6F5A2 /* FlightsViewController.swift in Sources */,
+				897A22F31D53847900A15F19 /* PathDrawings.swift in Sources */,
 				8909E8861C83AEBD00053F08 /* Model.swift in Sources */,
 				89D1A3C81C81B15700A6F5A2 /* AppDelegate.swift in Sources */,
+				89AC04F61E63ADB400B6A88A /* FlightInfoView.swift in Sources */,
 				89DB37821C826EB5003D01F5 /* ArrowView.swift in Sources */,
-				896938691C82159A00E7CA12 /* InfoViewController.swift in Sources */,
-				8909E8881C83B13E00053F08 /* SwiftyJSON.swift in Sources */,
+				896938691C82159A00E7CA12 /* FlightsInfoViewController.swift in Sources */,
 				89AA45FC1C81DF2F0056FB8A /* Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,23 +390,29 @@
 		};
 		89D1A3D71C81B15700A6F5A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22B12401F5E1565958A843ED /* Pods-BrnoFlights.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BrnoFlights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Revion.BrnoFlights;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BrnoFlights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		89D1A3D81C81B15700A6F5A2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DEA9E57B042B32E26985CC5 /* Pods-BrnoFlights.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BrnoFlights/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Revion.BrnoFlights;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BrnoFlights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

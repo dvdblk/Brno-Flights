@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 typealias Price = Int
 typealias UnixTime = Int
@@ -18,21 +19,26 @@ extension Price {
 }
 
 extension UnixTime {
-    func formatType(form: String) -> NSDateFormatter {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+    func formatType(_ form: String) -> DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateFormat = form
         return dateFormatter
     }
-    var dateFull: NSDate {
-        return NSDate(timeIntervalSince1970: Double(self))
+    var dateFull: Date {
+        return Date(timeIntervalSince1970: Double(self))
     }
     var toHour: String {
-        return formatType("HH:mm").stringFromDate(dateFull)
+        return formatType("HH:mm").string(from: dateFull)
     }
     var toDay: String {
-        return formatType("MMM d, y").stringFromDate(dateFull)
+        return formatType("MMM d, y").string(from: dateFull)
     }
+}
+
+struct FlightRoutesInfo {
+    var cities: [String]
+    var layovers: [UnixTime]
 }
 
 struct DataCell {
@@ -49,6 +55,22 @@ struct DataCell {
     var aTime: UnixTime = 0
     var transfers: Int = 0
     var route: [DataCell] = []
+    
+    static func layover(at firstPlace: DataCell, to secondPlace: DataCell) -> UnixTime {
+        return firstPlace.aTime - secondPlace.dTime
+    }
+    
+    static func createFlightRoutesInfo(from flight: DataCell) -> FlightRoutesInfo {
+        var previousFlight = flight
+        var resultCities = [previousFlight.cityFrom]
+        var resultLayovers = [UnixTime]()
+        for tempDestination in flight.route {
+            resultCities.append(tempDestination.cityFrom)
+            resultLayovers.append(DataCell.layover(at: previousFlight, to: tempDestination))
+            previousFlight = tempDestination
+        }
+        return FlightRoutesInfo(cities: resultCities, layovers: resultLayovers)
+    }
 }
 
 class FlightData {
@@ -66,7 +88,7 @@ class Parser {
     
     func parseJson() -> [DataCell] {
         var tempDCArr: [DataCell] = []
-        func parse(j: JSON) -> DataCell {
+        func parse(_ j: JSON) -> DataCell {
             var tempDC = DataCell()
             tempDC.flyTo = j["flyTo"].stringValue
             tempDC.flyDuration = j["fly_duration"].stringValue
@@ -78,7 +100,7 @@ class Parser {
             tempDC.aTime = j["aTime"].intValue
             let route = j["route"]
             let transfers = route.count
-            tempDC.transfers = transfers
+            tempDC.transfers = transfers-1
             for i in 0..<transfers {
                 tempDC.route.append(parse(route[i]))
             }
@@ -92,8 +114,8 @@ class Parser {
     }
     
     init() {
-        if let path = NSBundle.mainBundle().pathForResource("flights", ofType: "json") {
-            if let jsonData = NSData(contentsOfFile: path) {
+        if let path = Bundle.main.path(forResource: "flights", ofType: "json") {
+            if let jsonData = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 self.json = JSON(data: jsonData)["data"]
             }
         }
